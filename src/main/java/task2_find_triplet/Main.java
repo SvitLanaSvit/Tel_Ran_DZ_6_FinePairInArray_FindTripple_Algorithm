@@ -1,4 +1,4 @@
-package task2_find_tree;
+package task2_find_triplet;
 
 import java.util.HashMap;
 import java.util.Map;
