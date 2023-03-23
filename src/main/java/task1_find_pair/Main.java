@@ -9,7 +9,7 @@ public class Main {
     public static void main(String[] args) {
         //variant_1 Time complexity: O(n lon n)!!! not good
         int[] arr = {10, 20, 20, 35, 50, 75, 80};
-        int x = 55;
+        int x = 5;
         int[] res1 = findPair(arr, x);
         if (res1 != null) {
             System.out.println("Pair found: " + res1[0] + ", " + res1[1]);
@@ -37,10 +37,11 @@ public class Main {
     //var_1---------------------------------------------
     private static int[] findPair(int[] arr, int x){
         int mid = x/2;
-        int idx = Arrays.binarySearch(arr, findValue(arr, mid));
+//        int idx = Arrays.binarySearch(arr, findValue(arr, mid));
+        int idx = Arrays.binarySearch(arr, mid);
         //System.out.println(idx);
         if(idx < 0){
-            idx = -(idx + 1);
+            idx = -(idx + 2);
         }
         int left = idx;
         int right = idx + 1;
@@ -60,30 +61,30 @@ public class Main {
 
         return null;
     }
-    private static int findValue(int[] arr, int val){
-        int left = 0;
-        int right = arr.length - 1;
-        int index = -1;
-        while(left <= right){
-            int mid = left + (right - left) / 2;
-            if(arr[mid] < val){
-                index = mid;
-                left = mid + 1;
-            }
-            else if(arr[mid] == val){
-                index = mid;
-                left = mid + 1;
-            }
-            else{
-                right = mid - 1;
-            }
-        }
-        if (index == -1) {
-            return -1; // no value found
-        } else {
-            return arr[index];
-        }
-    }
+//    private static int findValue(int[] arr, int val){
+//        int left = 0;
+//        int right = arr.length - 1;
+//        int index = -1;
+//        while(left <= right){
+//            int mid = left + (right - left) / 2;
+//            if(arr[mid] < val){
+//                index = mid;
+//                left = mid + 1;
+//            }
+//            else if(arr[mid] == val){
+//                index = mid;
+//                left = mid + 1;
+//            }
+//            else{
+//                right = mid - 1;
+//            }
+//        }
+//        if (index == -1) {
+//            return -1; // no value found
+//        } else {
+//            return arr[index];
+//        }
+//    }
     //--------------------------------------------------
 
     //var_2---------------------------------------------
